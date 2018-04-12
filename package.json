@@ -1,0 +1,45 @@
+{
+  "name": "next-starter",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "next build src && tsc --project tsconfig.server.json",
+    "start": "NODE_ENV=production node build/server.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "build/**/*",
+      "src/components/**/*",
+      "src/pages/**/*"
+    ],
+    "verbose": false,
+    "delay": "500",
+    "exec": "ts-node --compilerOptions '{\"module\":\"commonjs\"}' 'src/server.ts'",
+    "ext": ".ts,.tsx"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.12.2",
+    "next": "^6.0.0-canary.3",
+    "next-routing-tools": "^1.0.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "recompose": "^0.26.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "@types/next": "^2.4.9",
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.3.9",
+    "@types/react-dom": "^16.0.5",
+    "@types/recompose": "^0.24.7",
+    "@zeit/next-typescript": "^0.1.1",
+    "nodemon": "^1.17.3",
+    "prettier": "^1.12.0",
+    "ts-node": "^5.0.1",
+    "typescript": "^2.8.1"
+  }
+}
